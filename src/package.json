@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/TymianekPL/Tymianek-API/issues"
   },
-  "homepage": "https://github.com/TymianekPL/Tymianek-API#readme"
+  "homepage": "https://github.com/TymianekPL/Tymianek-API#readme",
+  "devDependencies": {
+    "@types/node": "^15.0.3",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
 }
