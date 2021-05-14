@@ -1,21 +1,12 @@
-class server {
-     async getKey(URL) {
-          var resp = "";
-          const HOST = "tymianek.mooo.com";
-          const http = require('https');
+const fetch = require("node-fetch");
 
-          const options = {
-               host: HOST,
-               path: URL,
-               method: 'GET',
-          };
-          await makeRequest();
-          return resp;
-          async function makeRequest() {
-               const json = await fetch("tymianek.mooo.com").then(res => res.json()); // fetch the JSON from the API
-               resp = JSON;
-               console.log(json.a.b.c);
-          }
+class server {
+     async LetServerWork(URL) {
+          var resp = "";
+          const HOST = "https://tymianek.mooo.com";
+          const json = await fetch(HOST + URL).then(res => res.json())
+          console.log(json);
+          return json;
      }
 }
 
