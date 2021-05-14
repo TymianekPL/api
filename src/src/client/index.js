@@ -39,8 +39,10 @@ exports.__esModule = true;
 var socket = require("../socket/socket");
 var Exceptions = require("../exception/index");
 var Action = require("../event/event.js");
+exports["default"] = Client;
 var Client = /** @class */ (function () {
     function Client() {
+        return this;
     }
     Client.prototype.Init = function (token) {
         return __awaiter(this, void 0, void 0, function () {
@@ -49,7 +51,7 @@ var Client = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         this.token = token;
-                        return [4 /*yield*/, socket.LetServerWork("/api/v/init?key=" + token)];
+                        return [4 /*yield*/, socket.LetServerWork("/api/v/node/init?key=" + token)];
                     case 1:
                         response = _a.sent();
                         ok = JSON.stringify(response);
