@@ -1,9 +1,11 @@
 const socket = require('../socket/socket');
-
+let token;
 class Client {
-     Init(ID) {
-          console.log(socket.LetServerWork("/api/v/example?key=" + ID));
+     async Init(token) {
+          this.token = token;
+          return await socket.LetServerWork("/api/v/init?key=" + token);
      }
+     token;
 }
 
 module.exports = Client;
