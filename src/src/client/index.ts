@@ -1,5 +1,5 @@
-import socket from '../socket/socket.js';
-import Exceptions from '../exception/index.js';
+import socket = require('../socket/socket');
+import Exceptions = require('../exception/index');
 import Action = require('../event/event.js');
 export class Client {
     token: any;
