@@ -13,15 +13,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-var c = require('../client/index.js');
+var index_js_1 = require("../client/index.js");
 var BaseClient = /** @class */ (function (_super) {
     __extends(BaseClient, _super);
     function BaseClient() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     BaseClient.prototype.on = function (event) {
+        console.log(event);
     };
     ;
     return BaseClient;
-}(c.Client));
+}(index_js_1.Client));
 exports.BaseClient = BaseClient;
