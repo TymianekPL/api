@@ -1,5 +1,5 @@
 const API = require('./src');
 const Client = new API.Client();
-Client.Init(12345).then(result => {
+Client.Init(1).then(result => {
     console.log(result)
 })

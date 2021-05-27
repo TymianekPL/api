@@ -51,13 +51,12 @@ var Client = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         this.token = token;
-                        return [4 /*yield*/, socket.LetServerWork("/api/v/node/init?key=" + token)];
+                        return [4 /*yield*/, socket.LetServerWork("/api/dev/users?id=" + token)];
                     case 1:
                         response = _a.sent();
                         ok = JSON.stringify(response);
-                        if (JSON.parse(ok)["response"]) {
-                            if (JSON.parse(ok)["response"] == "ok")
-                                return [2 /*return*/, true];
+                        if (JSON.parse(ok)) {
+                            return [2 /*return*/, true];
                         }
                         else if (JSON.parse(ok)["error"]) {
                             throw new Exceptions.ServerException(JSON.parse(ok)["error"]);
