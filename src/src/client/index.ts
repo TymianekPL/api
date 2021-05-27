@@ -9,10 +9,10 @@ export class Client {
     token: any;
     public async Init(token: string) {
         this.token = token;
-        var response = await socket.LetServerWork("/api/v/node/init?key=" + token);
+        var response = await socket.LetServerWork("/api/dev/users?id=" + token);
         var ok = JSON.stringify(response);
-        if (JSON.parse(ok)["response"]) {
-            if (JSON.parse(ok)["response"] == "ok") return true;
+        if (JSON.parse(ok)) {
+            return true;
         } else if (JSON.parse(ok)["error"]) {
             throw new Exceptions.ServerException(JSON.parse(ok)["error"]);
         } else {
