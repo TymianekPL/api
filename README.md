@@ -9,14 +9,11 @@
 * Create index.js file
 * write code above to index.js
 ```js
-const tymianek = require("./src");
-const Client = new tymianek.Client();
-
-// CODE
-
-
-// END
-Client.Init('TOKEN');
+const API = require('./src');
+const Client = new API.Client();
+Client.Init('TOKEN').then(result => {
+    console.log(result)
+});
 ```
 * replace 'TOKEN' with your bot token
 * inside comments write some code
