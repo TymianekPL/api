@@ -2,23 +2,23 @@
 
 ### Setup your application 
 * open [Developers portal](https://tymianek.mooo.com/api/user/apps)
-* Create application by clicking `+`
-* copy application ID
+* Create application by clicking `create`
+* copy bot token
 ### Node js
 * Run `git clone https://github.com/TymianekPL/api.git` in the terminal (Not yet) 
-* Create bot.js file
-* write code above to bot.js
+* Create index.js file
+* write code above to index.js
 ```js
-const tymianek = require("tymianek-tsjs");
-const client = tymianek.Client();
+const tymianek = require("./src");
+const Client = new tymianek.Client();
 
 // CODE
 
 
 // END
-client.Init('ID');
+Client.Init('TOKEN');
 ```
-* replace 'ID' with your ID 
+* replace 'TOKEN' with your bot token
 * inside comments write some code
 * test your app
 
