@@ -5,7 +5,7 @@
 * Create application by clicking `+`
 * copy application ID
 ### Node js
-* run `git ` in terminal
+* Run `git clone https://github.com/TymianekPL/api.git` in the terminal (Not yet) 
 * Create bot.js file
 * write code above to bot.js
 ```js
