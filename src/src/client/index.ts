@@ -1,4 +1,4 @@
-import socket = require('../socket/socket');
+import socket = require('../networking/socket');
 import Exceptions = require('../exception/index');
 import Action = require('../event/event.js');
 export default Client;
@@ -6,18 +6,16 @@ export class Client {
     constructor() {
         return this;
     }
-    token: any;
+    token: string;
     public async Init(token: string) {
         this.token = token;
-        var response = await socket.LetServerWork("/api/dev/users?id=" + token);
+        var response = await socket.LetServerWork("/api/dev/get-user?token=" + token);
         var ok = JSON.stringify(response);
-        if (JSON.parse(ok)) {
-            return true;
-        } else if (JSON.parse(ok)["error"]) {
-            throw new Exceptions.ServerException(JSON.parse(ok)["error"]);
-        } else {
-            throw new Exceptions.ServerException("Empty response exception");
+        if (JSON.parse(ok)["code"]) {
+            throw new Exceptions.ServerException(JSON.parse(ok)["code"]);
         }
+
+        return true;
     }
     public action() {
         return new Action.BaseClient().on;

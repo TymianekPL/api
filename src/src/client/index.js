@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 exports.Client = void 0;
-var socket = require("../socket/socket");
+var socket = require("../networking/socket");
 var Exceptions = require("../exception/index");
 var Action = require("../event/event.js");
 exports["default"] = Client;
@@ -52,20 +52,14 @@ var Client = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         this.token = token;
-                        return [4 /*yield*/, socket.LetServerWork("/api/dev/users?id=" + token)];
+                        return [4 /*yield*/, socket.LetServerWork("/api/dev/get-user?token=" + token)];
                     case 1:
                         response = _a.sent();
                         ok = JSON.stringify(response);
-                        if (JSON.parse(ok)) {
-                            return [2 /*return*/, true];
+                        if (JSON.parse(ok)["code"]) {
+                            throw new Exceptions.ServerException(JSON.parse(ok)["code"]);
                         }
-                        else if (JSON.parse(ok)["error"]) {
-                            throw new Exceptions.ServerException(JSON.parse(ok)["error"]);
-                        }
-                        else {
-                            throw new Exceptions.ServerException("Empty response exception");
-                        }
-                        return [2 /*return*/];
+                        return [2 /*return*/, true];
                 }
             });
         });
