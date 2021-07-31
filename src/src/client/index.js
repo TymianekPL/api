@@ -36,6 +36,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+exports.Client = void 0;
 var socket = require("../socket/socket");
 var Exceptions = require("../exception/index");
 var Action = require("../event/event.js");

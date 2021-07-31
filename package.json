@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "* open [Developers portal](https://tymianek.mooo.com/api/user/apps)\r * Create application by clicking `create`\r * copy bot token\r ### Node js\r * Run `git clone https://github.com/TymianekPL/api.git` in the terminal (Not yet) \r * Create index.js file\r * write code above to index.js\r ```js\r const API = require('./src');\r const Client = new API.Client();\r Client.Init('TOKEN').then(result => {\r     console.log(result)\r });\r ```\r * replace 'TOKEN' with your bot token\r * inside comments write some code\r * test your app",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TymianekPL/api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TymianekPL/api/issues"
+  },
+  "homepage": "https://github.com/TymianekPL/api#readme"
+}
